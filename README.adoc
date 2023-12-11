@@ -7,17 +7,24 @@ Ce dépôt concerne les rendus de mailto:esteban.biret-toscano@etu.univ-tlse2.fr
 
 == TP1
 
-.Exemple de code
+Contenu du fichier `is_it_friday_yet.feature` :
 [source,java]
 ---
-@Given("today is Sunday")
-public void today_is_sunday() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+Feature: Is it Friday yet?
+Long live Saturday!
+  Scenario Outline: Today is or is not Friday
+    Given today is "<day>"
+    When I ask whether it's Friday yet
+    Then I should be told "<answer>"
+  Examples:
+    | day            | answer |
+    | Friday         | TGIF   |
+    | Sunday         | Nope, relax ! |
+    | anything else! | Nope, relax ! |
 ---
 
-.Exemple d'image insérée en asciidoc
-image::artifacts-r303.svg[width=80%]
+Capture d'écran de l'exécution avec succès des tests :
 
-== TP2...
+image::resources/tests_tp1.png[]
+
+== TP2 à suivre
