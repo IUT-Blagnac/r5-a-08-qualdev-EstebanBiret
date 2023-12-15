@@ -72,3 +72,84 @@ public class Order {
 Capture d'écran de l'exécution avec succès des tests :
 
 image::resources/tests_tp2.png[]
+
+== TP3
+
+Contenu de mon fichier `bank.feature` : 
+
+```
+Feature: Bank Account
+  Scenario Outline: Create an account and perform transactions
+    Given a new user
+    When the user creates an account with a balance of <initial_balance>
+    And the user deposits <deposit_amount> into the account
+    Then the user should have a balance of <expected_balance>
+    Examples:
+      | initial_balance | deposit_amount | expected_balance |
+      | 0               | 50             | 50               |
+      | 100             | 25             | 125              |
+      | 200             | 100            | 300              |
+  Scenario Outline: Withdraw from the account
+    Given a user with a balance of <initial_balance>
+    When the user withdraws <withdraw_amount> from the account
+    Then the user should have a balance after withdrawal of <expected_balance_after_withdrawal>
+    Examples:
+      | initial_balance | withdraw_amount | expected_balance_after_withdrawal |
+      | 150             | 50              | 100                               |
+      | 300             | 100             | 200                               |
+      | 500             | 200             | 300                               |
+
+```
+
+Contenu de mon fichier `steps.py` :
+
+
+```python
+from behave import *
+from bank import BankAccount
+
+# Given
+@given(u'a new user')
+def step_given_new_user(context):
+    context.user_account = BankAccount()
+
+@given(u'a user with a balance of {initial_balance}')
+def step_given_user_with_balance(context, initial_balance):
+    context.user_account = BankAccount()
+    context.user_account.create_account(int(initial_balance))
+
+# When
+@when(u'the user creates an account with a balance of {initial_balance}')
+def step_when_create_account(context, initial_balance):
+    context.user_account.create_account(int(initial_balance))
+
+@when(u'the user deposits {deposit_amount} into the account')
+def step_when_deposit(context, deposit_amount):
+    context.user_account.deposit(int(deposit_amount))
+
+@when(u'the user withdraws {withdraw_amount} from the account')
+def step_when_withdraw(context, withdraw_amount):
+    context.user_account.withdraw(int(withdraw_amount))
+
+# Then
+@then(u'the user should have a balance of {expected_balance}')
+def step_then_check_balance(context, expected_balance):
+    assert context.user_account.balance == int(expected_balance), f"Expected {expected_balance}, but got {context.user_account.balance}"
+
+@then(u'the user should have a balance after withdrawal of {expected_balance_after_withdrawal}')
+def step_then_check_balance_after_withdrawal(context, expected_balance_after_withdrawal):
+    assert context.user_account.balance == int(expected_balance_after_withdrawal), f"Expected {expected_balance_after_withdrawal}, but got {context.user_account.balance}"
+```
+
+Capture d'écran de l'exécution avec succès des tests (commande `python -m behave` à la racine de mon répertoire) :
+
+image::resources/tests_tp3.png[]
+
+
+Explications : Pour ce TP, j'ai voulu voir comment faire des tests d'acceptation en BDD en Python, langage que j'apprécie.
+Je me suis documenté et j'ai trouvé behave, je l'ai installé puis lancé les tests.
+
+J'ai choisi d'implémenter une mini banque, pour me rappeler les bons souvenirs de la SAE Banque du S2 (pas vraiment).
+
+== TP4
+
