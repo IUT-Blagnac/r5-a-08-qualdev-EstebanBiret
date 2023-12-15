@@ -153,3 +153,21 @@ J'ai choisi d'implémenter une mini banque, pour me rappeler les bons souvenirs 
 
 == TP4
 
+
+Documentation minimale (Cucumber, commande `mvn test | Select-Object -Last 23 | Out-File report.txt`) :
+
+```shell
+include::cucumber_demo/report.txt[]
+```
+
+Documentation améliorée (cukedoctor) :
+
+---
+include::cucumber_demo/target/cukedoctor/documentation.adoc[]
+---
+
+Véritable rapport (serenity) :
+
+
+Lien vers le rapport html : https://htmlpreview.github.io/?https://github.com/IUT-Blagnac/r5-a-08-qualdev-EstebanBiret/serenity/index.html
+

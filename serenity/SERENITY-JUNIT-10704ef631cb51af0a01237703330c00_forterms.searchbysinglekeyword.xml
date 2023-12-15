@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="starter.wikipedia.WhenSearchingForTerms" skipped="0" tests="1" time="4.63" timestamp="2023-12-15 03:20:26"><testcase classname="starter.wikipedia.WhenSearchingForTerms" name="Search by single keyword"><failure message="&#10;Expecting text of element located by #firstHeading that is equal to: &lt;&quot;Mount Everest&quot;&gt;&#10;But got............................................................: &lt;&quot;Everest&quot;&gt;" type="java.lang.AssertionError">
+Expecting text of element located by #firstHeading that is equal to: &lt;"Mount Everest"&gt;
+But got............................................................: &lt;"Everest"&gt;</failure><system-err>
+Expecting text of element located by #firstHeading that is equal to: &lt;"Mount Everest"&gt;
+But got............................................................: &lt;"Everest"&gt;&#13;
+net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:519)&#13;
+net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:499)&#13;
+net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:471)&#13;
+net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:213)&#13;
+net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:200)&#13;
+net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:92)&#13;
+starter.wikipedia.WhenSearchingForTerms.searchBySingleKeyword(WhenSearchingForTerms.java:18)&#13;
+</system-err></testcase></testsuite>
