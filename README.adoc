@@ -157,17 +157,37 @@ J'ai choisi d'implémenter une mini banque, pour me rappeler les bons souvenirs 
 Documentation minimale (Cucumber, commande `mvn test | Select-Object -Last 23 | Out-File report.txt`) :
 
 ```shell
-include::cucumber_demo/report.txt[]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.mycompany.app.AppTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 s -- in com.mycompany.app.AppTest
+[INFO] Running dojo.RunCucumberTest
+
+4 Scenarios (4 passed)
+14 Steps (14 passed)
+0m0,050s
+
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.510 s -- in dojo.RunCucumberTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.274 s
+[INFO] Finished at: 2023-12-15T14:41:57+01:00
+[INFO] ------------------------------------------------------------------------
 ```
 
 Documentation améliorée (cukedoctor) :
 
----
-include::cucumber_demo/target/cukedoctor/documentation.adoc[]
----
+Lien vers le rapport html : https://htmlpreview.github.io/?https://github.com/IUT-Blagnac/r5-a-08-qualdev-EstebanBiret/blob/main/hellocucumber/target/cukedoctor/documentation.html
+
 
 Véritable rapport (serenity) :
 
-
-Lien vers le rapport html : https://htmlpreview.github.io/?https://github.com/IUT-Blagnac/r5-a-08-qualdev-EstebanBiret/serenity/index.html
+Lien vers le rapport html : https://htmlpreview.github.io/?https://github.com/IUT-Blagnac/r5-a-08-qualdev-EstebanBiret/blob/main/serenity/index.html
 
